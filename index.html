@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RopaControl</title>
+    <link rel="icon" href="assets/Logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="titulo-principal">Gestión de inventario de ropa</h1>
+
+    <form id="formulario-ropa">
+        <h2 id="titulo-formulario" class="fondo-azul">Agregar producto</h2>
+        <input type="hidden" id="id">
+
+        <select id="tipo" required>
+            <option value="" disabled selected>Tipo de prenda</option>
+            <option value="sueter">Suéter</option>
+            <option value="pantalon">Pantalón</option>
+            <option value="camisa">Camisa</option>
+            <option value="otra">Otra</option>
+        </select>
+
+        <select id="talla" required>
+            <option value="" disabled selected>Talla</option>
+        </select>
+
+        <div style="position: relative;">
+            <span style="position: absolute; top: 8px; left: 10px;">$</span>
+            <input type="number" id="precio" placeholder="Precio" style="padding-left: 20px;" required>
+        </div>
+
+        <button type="submit" class="btn-guardar">Guardar</button>
+    </form>
+
+    <h2 class="fondo-azul">Tabla de productos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Talla</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="lista-ropa"></tbody>
+    </table>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./controllers/ropaController.js"></script>
+</body>
+</html>
