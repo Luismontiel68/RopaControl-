@@ -1,0 +1,59 @@
+==================================================
+ INSTRUCCIONES DOCENTE – CRUD BASE: GESTIÓN DE PRODUCTOS
+ Ingeniería de Software II
+==================================================
+
+OBJETIVO
+Utilizar una aplicación CRUD funcional como caso base para aplicar los conceptos de Ingeniería de Software II en un entorno práctico y significativo.
+
+--------------------------------------------------
+UNIDAD 1 – DISEÑO DE SOFTWARE
+--------------------------------------------------
+Temas: Arquitectura, patrones, diseño de interfaces, metodologías ágiles
+
+Actividades sugeridas:
+1. Analizar la estructura actual del proyecto y discutir si cumple con una arquitectura MVC.
+2. Identificar responsabilidades en el código: ¿Dónde está el modelo, vista y controlador?
+3. Proponer mejoras al diseño (por ejemplo: separar aún más la lógica).
+4. Aplicar un patrón de diseño sencillo (ej. Singleton para el acceso al almacenamiento).
+5. Simular una historia de usuario y organizarla en un backlog (Scrum).
+6. Dibujar un diagrama de arquitectura básica del sistema.
+
+--------------------------------------------------
+UNIDAD 2 – GESTIÓN DE CONFIGURACIÓN DE SOFTWARE
+--------------------------------------------------
+Temas: Control de versiones, identificación de objetos, auditoría
+
+Actividades sugeridas:
+1. Inicializar un repositorio Git en la carpeta del proyecto.
+2. Crear ramas para cada mejora o ajuste (ej. "rama-interface", "rama-patrones").
+3. Documentar los cambios con commits significativos.
+4. Hacer seguimiento de versiones (por fecha o por cambios en código).
+5. Preparar un changelog con los cambios aplicados.
+6. Simular un flujo de pull request (si trabajan en grupo o en GitHub).
+
+--------------------------------------------------
+UNIDAD 3 – GESTIÓN DE PROYECTOS Y MÉTRICAS
+--------------------------------------------------
+Temas: Riesgos, métricas, normas, calidad
+
+Actividades sugeridas:
+1. Crear una matriz de riesgos: ¿Qué podría fallar en esta app y cómo mitigarlo?
+2. Medir:
+   - Número de líneas de código por archivo
+   - Cantidad de commits realizados
+   - Frecuencia de errores corregidos
+   - Tiempo de implementación por funcionalidad
+3. Establecer objetivos de mejora (por ejemplo: mejorar tiempo de carga, separar capas).
+4. Aplicar normas de calidad básicas (buenas prácticas de codificación, validaciones, comentarios).
+
+--------------------------------------------------
+SUGERENCIAS ADICIONALES
+
+- Puedes dividir la clase en equipos donde unos usen su propio software y otros este CRUD.
+- Pide a los estudiantes comparar este CRUD con un proyecto que ya hayan desarrollado.
+- Usa el CRUD como base para presentar errores intencionales y enseñar a refactorizar.
+- Este proyecto es ideal para incluirlo en portafolios o como base para prácticas más grandes.
+
+==================================================
+Fin del documento.
