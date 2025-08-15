@@ -4,68 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RopaControl</title>
+    
+    <!-- Ícono de la pestaña del navegador -->
     <link rel="icon" href="assets/Logo.png" type="image/png">
+    
+    <!-- Hoja de estilos -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<h1 class="titulo-principal">Gestión de inventario de ropa</h1>
+    <!-- Título principal -->
+    <h1 class="titulo-principal">Gestión de inventario de ropa</h1>
 
-<!-- Contenedor centrado de botones en columna -->
-<div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 20px 0;">
-    <button id="btn-formulario" class="btn-principal">Agregar producto</button>
-    <button id="btn-historial" class="btn-principal">Ver historial</button>
-</div>
+    <!-- Contenedor de botones principales (centrados en columna) -->
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 20px 0;">
+        <!-- Botón para mostrar/ocultar formulario -->
+        <button id="btn-formulario" class="btn-principal">Agregar producto</button>
+        <!-- Botón para mostrar/ocultar historial -->
+        <button id="btn-historial" class="btn-principal">Ver historial</button>
+    </div>
 
+    <!-- Contenedor del formulario (oculto por defecto) -->
+    <div id="contenedor-formulario" style="margin-top:15px; display:none; text-align:center;">
+        <form id="formulario-ropa">
+            <!-- Título dinámico del formulario -->
+            <h2 id="titulo-formulario" class="fondo-azul">Agregar producto</h2>
+            
+            <!-- Campo oculto para ID de producto (se usa en edición) -->
+            <input type="hidden" id="id">
 
-<!-- Contenedor oculto del formulario -->
-<div id="contenedor-formulario" style="margin-top:15px; display:none; text-align:center;">
-    <form id="formulario-ropa">
-        <h2 id="titulo-formulario" class="fondo-azul">Agregar producto</h2>
-        <input type="hidden" id="id">
+            <!-- Selección de tipo de prenda -->
+            <select id="tipo" required>
+                <option value="" disabled selected>Tipo de prenda</option>
+                <option value="sueter">Suéter</option>
+                <option value="pantalon">Pantalón</option>
+                <option value="camisa">Camisa</option>
+                <option value="otra">Otra</option>
+            </select>
 
-        <select id="tipo" required>
-            <option value="" disabled selected>Tipo de prenda</option>
-            <option value="sueter">Suéter</option>
-            <option value="pantalon">Pantalón</option>
-            <option value="camisa">Camisa</option>
-            <option value="otra">Otra</option>
-        </select>
+            <!-- Selección de talla (se llenará dinámicamente) -->
+            <select id="talla" required>
+                <option value="" disabled selected>Talla</option>
+            </select>
 
-        <select id="talla" required>
-            <option value="" disabled selected>Talla</option>
-        </select>
+            <!-- Campo numérico para el precio con símbolo $ fijo -->
+            <div style="position: relative;">
+                <span style="position: absolute; top: 8px; left: 10px;">$</span>
+                <input type="number" id="precio" placeholder="Precio" style="padding-left: 20px;" required>
+            </div>
 
-        <div style="position: relative;">
-            <span style="position: absolute; top: 8px; left: 10px;">$</span>
-            <input type="number" id="precio" placeholder="Precio" style="padding-left: 20px;" required>
-        </div>
+            <!-- Botón de guardar producto -->
+            <button type="submit" class="btn-guardar">Guardar</button>
+        </form>
+    </div>
 
-        <button type="submit" class="btn-guardar">Guardar</button>
-    </form>
-</div>
+    <!-- Contenedor para historial de acciones (oculto por defecto) -->
+    <div id="contenedor-historial" style="margin-top:10px; display:none; text-align:center;"></div>
 
-<!-- Historial debajo -->
-<div id="contenedor-historial" style="margin-top:10px; display:none; text-align:center;"></div>
+    <!-- Tabla de productos -->
+    <h2 class="fondo-azul">Tabla de productos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Talla</th>
+                <th>Precio</th>
+                <th>Acciones</th> <!-- Editar / Eliminar -->
+            </tr>
+        </thead>
+        <!-- Aquí se insertarán dinámicamente los productos -->
+        <tbody id="lista-ropa"></tbody>
+    </table>
 
-<h2 class="fondo-azul">Tabla de productos</h2>
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Tipo</th>
-            <th>Talla</th>
-            <th>Precio</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody id="lista-ropa"></tbody>
-</table>
-
-
-
-
+    <!-- ========================== -->
+    <!-- SCRIPTS (Módulos ES6) -->
+    <!-- ========================== -->
+    <!-- Singleton (logger de historial) -->
     <script type="module" src="./singleton_montiel/singleton.js"></script>
+    <!-- Archivo principal de la app -->
     <script type="module" src="./js/main.js"></script>
+    <!-- Controlador que maneja la lógica de productos -->
     <script type="module" src="./controllers/ropaController.js"></script>
 </body>
 </html>
