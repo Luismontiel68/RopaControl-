@@ -101,7 +101,8 @@ const mostrarHistorial = () => {
             <tbody>
     `;
 
-    historial.forEach(reg => {
+    // Mostrar del más reciente al más antiguo
+    historial.slice().reverse().forEach(reg => {
         tabla += `
             <tr>
                 <td>${reg.fecha}</td>
@@ -114,6 +115,7 @@ const mostrarHistorial = () => {
     tabla += `</tbody></table>`;
     contenedor.innerHTML = tabla;
 };
+
 
 document.addEventListener("DOMContentLoaded", () => {
     mostrarProductos();
