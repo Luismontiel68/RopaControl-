@@ -1,6 +1,14 @@
 import { Ropa } from "../models/ropaModel.js";
 import { RopaVista } from "../views/ropaView.js";
 import { obtenerPrendas, guardarPrenda, eliminarPrenda } from "../js/storage.js";
+import historial from '../singleton_montiel/singleton.js';
+
+historial.registrarAccion("Se agregó un nuevo producto: Camisa talla M, $25000");
+historial.registrarAccion("Se eliminó el producto con ID 5");
+
+console.log("Historial de acciones:");
+console.table(historial.obtenerHistorial());
+
 
 const vista = new RopaVista();
 

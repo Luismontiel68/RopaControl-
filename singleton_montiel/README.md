@@ -1,21 +1,32 @@
-# Implementación del Patrón Singleton
+# Implementación del Patrón Singleton – Historial de Acciones
 
-## ¿Qué es el patrón Singleton?
+## ¿En qué consiste el patrón Singleton?
 
-El patrón de diseño Singleton asegura que una clase tenga una única instancia y proporciona un punto de acceso global a ella. Se utiliza para gestionar recursos compartidos como configuraciones, conexiones o registros de sesión.
+En esta implementación, el patrón Singleton asegura que exista **una única instancia global del historial de acciones** dentro del sistema. Esto es útil porque queremos que todas las partes de la aplicación (como la creación, edición o eliminación de productos) puedan registrar y consultar el mismo historial, sin duplicar datos ni perder coherencia.
 
-## ¿Cómo se implementó?
+Al usar el patrón Singleton, cada vez que se importa la clase `HistorialAcciones`, se obtiene la **misma instancia compartida**, lo que garantiza que todas las acciones queden centralizadas y disponibles en un solo lugar.
 
-Se creó una clase `ConfiguracionApp` que mantiene una única instancia. Usando una propiedad estática (`ConfiguracionApp.instancia`), se asegura que siempre se retorne la misma instancia de la clase, sin importar cuántas veces se intente crear una nueva.
+---
 
-## ¿Qué hace el ejemplo?
+## ¿Cómo lo implementé?
 
-Simula una configuración global de la aplicación donde se controla el modo oscuro y la versión del sistema. Puedes cambiar la configuración desde cualquier módulo del proyecto y siempre estarás trabajando sobre la misma instancia.
+Se creó una clase llamada `HistorialAcciones` que mantiene un arreglo con todas las acciones realizadas por el usuario en la aplicación. Usando una propiedad estática (`HistorialAcciones.instancia`), se asegura que solo exista una instancia del historial sin importar cuántas veces se intente crear otra.
 
-## ¿Dónde usarlo?
+Al final del archivo, la instancia se exporta y se **congela** con `Object.freeze()` para evitar modificaciones no deseadas desde otros módulos.
 
-Este patrón puede ser útil en RopaControl para:
+---
 
-- Configuraciones globales del sistema.
-- Establecer preferencias del usuario.
-- Controlar el estado de la sesión (en módulos futuros).
+## ¿Qué hace mi ejemplo?
+
+Mi Singleton actúa como un registro de historial del sistema. Permite:
+
+- Registrar acciones realizadas por el usuario, como agregar, editar o eliminar productos.
+- Consultar todo el historial acumulado.
+- Limpiar el historial cuando sea necesario.
+
+Esto facilita el seguimiento de lo que sucede en la aplicación, mejora el control del sistema y puede servir como base para una futura sección de auditoría o reportes.
+
+---
+
+**Autor:** Luis Alberto Montiel Díaz  
+**Fecha:** 1 de agosto de 2025  

@@ -51,9 +51,7 @@ Eres libre de adaptarlo, extenderlo o compartirlo siempre que se mantenga el cr�
 
 ---
 
-**Autores:**  
-- Edwin Fabián Álvarez Jiménez  
-- Jesús Esteban Álvarez Jiménez  
+**Autor:**    
 - Luis Alberto Montiel Díaz  
-**Fecha:** 26/07/2025  
+**Fecha:** 02/08/2025  
 **Materia:** Ingeniería de Software II  
